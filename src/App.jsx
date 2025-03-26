@@ -1,0 +1,14 @@
+import SocialVelocity from "./SocialVelocity"
+
+
+function App() {
+  
+
+  return (
+    <>
+     <SocialVelocity/>
+    </>
+  )
+}
+
+export default App
