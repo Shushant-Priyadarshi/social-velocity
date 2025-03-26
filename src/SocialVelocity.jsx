@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
+
 export default function VelocityBusiness() {
   const fadeInUpAnimation = {
     hidden: {
@@ -194,6 +195,7 @@ export default function VelocityBusiness() {
           </a>
         </p>
       </motion.section>
+
     </div>
   );
 }
