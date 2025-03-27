@@ -58,7 +58,7 @@ export default function VelocityBusiness() {
       <div className="absolute top-32 left-1/2 transform -translate-x-1/2 w-1/2 h-[400px]   bg-gradient-to-r from-blue-400 to-purple-500 blur-3xl opacity-30"></div>
 
       {/* Navigation Bar */}
-      <nav className="fixed top-0 left-0 w-full bg-black bg-opacity-80 backdrop-blur-lg shadow-lg py-4 px-8 flex justify-between items-center z-50">
+      <nav className="fixed  top-0 left-0 w-full bg-black bg-opacity-80 backdrop-blur-lg shadow-lg py-4 px-8 flex justify-between items-center z-50">
         <h1 className="text-3xl font-bold tracking-wide">
           Social{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
@@ -83,7 +83,7 @@ export default function VelocityBusiness() {
         </div>
 
         <motion.ul
-          className={`md:flex  absolute md:static top-16 left-0 w-full bg-black bg-opacity-90 md:bg-transparent md:w-auto flex-col md:flex-row items-center transition-transform duration-300 ${
+          className={`md:flex md:gap-7 absolute md:static top-16 left-0 w-full bg-black bg-opacity-90 md:bg-transparent md:w-auto flex-col md:flex-row items-center transition-transform duration-300 ${
             menuOpen ? "flex" : "hidden"
           }`}
           initial={{ opacity: 0 }}
