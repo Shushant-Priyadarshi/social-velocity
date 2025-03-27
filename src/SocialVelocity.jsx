@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-
 export default function VelocityBusiness() {
   const fadeInUpAnimation = {
     hidden: {
@@ -70,14 +69,26 @@ export default function VelocityBusiness() {
           className="md:hidden cursor-pointer"
           onClick={() => setMenuOpen(!menuOpen)}
         >
-          <div className="w-6 h-1 bg-white mb-1"></div>
-          <div className="w-6 h-1 bg-white mb-1"></div>
-          <div className="w-6 h-1 bg-white"></div>
+          {menuOpen ? (
+            <div  >❌</div>
+
+          ) : (
+           
+            <div>
+              <div className="w-6 h-1 bg-white mb-1"></div>
+              <div className="w-6 h-1 bg-white mb-1"></div>
+              <div className="w-6 h-1 bg-white"></div>
+            </div>
+          )}
         </div>
-        <ul
-          className={`md:flex space-x-6 absolute md:static top-16 left-0 w-full bg-black bg-opacity-90 md:bg-transparent md:w-auto flex-col md:flex-row items-center transition-transform duration-300 ${
+
+        <motion.ul
+          className={`md:flex  absolute md:static top-16 left-0 w-full bg-black bg-opacity-90 md:bg-transparent md:w-auto flex-col md:flex-row items-center transition-transform duration-300 ${
             menuOpen ? "flex" : "hidden"
           }`}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.4 }}
         >
           {["Home", "Services", "About", "Contact"].map((item, index) => (
             <li key={index} className="py-2 md:py-0">
@@ -89,7 +100,7 @@ export default function VelocityBusiness() {
               </a>
             </li>
           ))}
-        </ul>
+        </motion.ul>
       </nav>
 
       {/* Hero Section */}
@@ -106,6 +117,7 @@ export default function VelocityBusiness() {
         >
           Turbocharge Your Online Presence⚡️
         </motion.h1>
+
         <p className="mt-6 font-semibold text-xl md:text-2xl max-w-3xl mx-auto relative z-10">
           A Brand That Takes Care Of Brands
         </p>
@@ -161,11 +173,14 @@ export default function VelocityBusiness() {
           About Us
         </h2>
         <p className="mt-6 text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed ">
-          Powering Brands with Digital Excellence At <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Social Velocity</span>, we are
-          more than just a marketing agency—we are your growth partners. Our
-          mission is to help businesses dominate the digital space with
-          high-impact marketing solutions that drive real results. We specialize
-          in boosting online presence, increasing customer trust, and
+          Powering Brands with Digital Excellence At{" "}
+          <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+            Social Velocity
+          </span>
+          , we are more than just a marketing agency—we are your growth
+          partners. Our mission is to help businesses dominate the digital space
+          with high-impact marketing solutions that drive real results. We
+          specialize in boosting online presence, increasing customer trust, and
           accelerating business growth through cutting-edge digital strategies.
         </p>
       </motion.section>
@@ -195,7 +210,6 @@ export default function VelocityBusiness() {
           </a>
         </p>
       </motion.section>
-
     </div>
   );
 }
